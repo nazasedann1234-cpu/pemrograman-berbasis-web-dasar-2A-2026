@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kecamatan Sedan</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-white text-gray-800 font-sans">
+
+<!-- NAVBAR -->
+<nav class="bg-white px-6 py-4 flex justify-between items-center shadow">
+  <h1 class="font-bold text-lg underline">Kecamatan Sedan</h1>
+
+  <div class="hidden sm:block">
+    <div class="flex space-x-4">
+      <a href="#beranda" class="rounded-md bg-green-600 px-3 py-2 text-sm font-medium text-white">Beranda</a>
+      <a href="#visi" class="rounded-md bg-green-600 px-3 py-2 text-sm font-medium text-white">Visi</a>
+      <a href="#potensi" class="rounded-md bg-green-600 px-3 py-2 text-sm font-medium text-white">Potensi</a>
+      <a href="#kontak" class="rounded-md bg-green-600 px-3 py-2 text-sm font-medium text-white">Kontak</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="beranda" class="min-h-screen flex items-center text-center px-6 bg-green-600 text-white">
+  <div class="mx-auto max-w-xl">
+    <h1 class="text-5xl font-bold mb-4 underline">Kecamatan Sedan</h1>
+    <p class="mb-6 text-white/90">Maju Bersama, Sejahtera Bersama</p>
+    <a href="#visi" class="bg-white text-green-700 px-6 py-3 rounded-full font-semibold hover:scale-105 transition">
+      Lihat Profil
+    </a>
+  </div>
+</section>
+
+<!-- VISI MISI -->
+<section id="visi" class="py-16 px-6">
+  <h2 class="text-3xl font-bold text-center mb-10 underline">Visi & Misi</h2>
+
+  <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+    
+    <div class="bg-green-100 p-6 rounded-2xl shadow">
+      <h3 class="font-bold text-green-700 mb-2">Visi</h3>
+      <p>Kecamatan maju, sejahtera, dan berbudaya berbasis gotong royong.</p>
+    </div>
+
+    <div class="bg-green-100 p-6 rounded-2xl shadow">
+      <h3 class="font-bold text-green-700 mb-2">Misi</h3>
+      <ul class="list-disc ml-5 space-y-1">
+        <li>Pelayanan publik prima</li>
+        <li>Penguatan ekonomi rakyat</li>
+        <li>Pelestarian budaya</li>
+        <li>Lingkungan bersih & hijau</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- POTENSI -->
+<section id="potensi" class="py-16 px-6">
+  <h2 class="text-3xl font-bold text-center mb-10 underline">Potensi Daerah</h2>
+
+  <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto text-center">
+
+    <div class="bg-green-100 p-6 rounded-2xl hover:bg-green-200 transition">
+      <div class="text-4xl mb-3">🌾</div>
+      <p class="font-semibold">Pertanian</p>
+    </div>
+
+    <div class="bg-green-100 p-6 rounded-2xl hover:bg-green-200 transition">
+      <div class="text-4xl mb-3">🏖️</div>
+      <p class="font-semibold">Wisata</p>
+    </div>
+
+    <div class="bg-green-100 p-6 rounded-2xl hover:bg-green-200 transition">
+      <div class="text-4xl mb-3">🕌</div>
+      <p class="font-semibold">Budaya</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- KONTAK -->
+<section id="kontak" class="py-16 px-6">
+  <h2 class="text-3xl font-bold text-center mb-10 underline">Hubungi Kami</h2>
+
+  <div class="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+
+    <!-- INFO -->
+    <div class="space-y-4">
+      <p>📍 Rembang, Jawa Tengah</p>
+      <p>📞 (031) 309-1234</p>
+      <p>✉️ kec.sedan@email.com</p>
+    </div>
+
+    <!-- FORM -->
+    <form class="bg-white border p-6 rounded-2xl shadow space-y-4">
+      <input type="text" placeholder="Nama" class="w-full p-3 rounded-xl border focus:border-green-500 outline-none">
+      <input type="email" placeholder="Email" class="w-full p-3 rounded-xl border focus:border-green-500 outline-none">
+      <textarea rows="3" placeholder="Pesan..." class="w-full p-3 rounded-xl border focus:border-green-500 outline-none"></textarea>
+
+      <button type="submit" class="w-full bg-green-600 text-white py-3 rounded-xl font-semibold hover:bg-green-700 transition">
+        Kirim Pesan
+      </button>
+    </form>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="text-center text-sm text-gray-400 py-6">
+  © 2026 Kecamatan Sedan
+</footer>
+
+</body>
+</html>

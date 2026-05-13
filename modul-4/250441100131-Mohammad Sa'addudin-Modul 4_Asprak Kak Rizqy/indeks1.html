@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BzMe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+        
+    </script>
+</head>
+
+<body class="bg-white dark:bg-gray-950 transition-colors duration-300">
+
+<div id="signupModal"
+onclick="outsideClick(event)"
+class="fixed inset-0 bg-black/50 hidden justify-center items-center z-50 px-4">
+
+    <div onclick="event.stopPropagation()"
+class="bg-white dark:bg-gray-900 w-full max-w-md rounded-2xl p-8 shadow-xl relative transition-colors duration-300">
+
+        <button onclick="closeModal()"
+            class="absolute top-4 right-4 text-2xl font-bold text-gray-500 hover:text-red-500">
+            ✕
+        </button>
+
+        <h2 class="text-3xl font-bold text-center text-[#8A38F5] mb-6">
+            Sign Up
+        </h2>
+
+        <input
+            type="text"
+            id="name"
+            placeholder="Full Name"
+            class="w-full border border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-white p-3 rounded-lg mb-4 focus:outline-none">
+
+        <input
+            type="text"
+            id="email"
+            placeholder="Email Address"
+            class="w-full border border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-white p-3 rounded-lg mb-4 focus:outline-none">
+
+        <input
+            type="password"
+            id="pass"
+            placeholder="Password"
+            class="w-full border border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-white p-3 rounded-lg mb-6 focus:outline-none">
+
+        <button
+            onclick="submitForm()"
+            class="w-full bg-[#FF9335] hover:bg-orange-500 text-white font-bold py-3 rounded-lg transition-colors">
+            Register
+        </button>
+
+    </div>
+</div>
+
+    <nav class="flex bg-white dark:bg-gray-900 shadow-lg justify-between items-center px-8 py-4 transition-colors duration-300">
+        <div class="flex items-center space-x-3">
+            <img src="Logo.png" class="h-10" alt="BzMe Logo">
+            <h2 class="text-[#8A38F5] font-bold text-2xl">BzMe</h2>
+        </div>
+
+        <div class="space-x-6 hidden md:flex">
+            <a href="#" class="text-[#8A38F5] font-semibold hover:text-[#FF9335] dark:hover:text-[#FF9335]">Home</a>
+            <a href="#" class="text-[#8A38F5] font-semibold hover:text-[#FF9335] dark:hover:text-[#FF9335]">About</a>
+            <a href="#" class="text-[#8A38F5] font-semibold hover:text-[#FF9335] dark:hover:text-[#FF9335]">Services</a>
+            <a href="#" class="text-[#8A38F5] font-semibold hover:text-[#FF9335] dark:hover:text-[#FF9335]">Contact</a>
+            <a href="#" class="text-[#8A38F5] font-semibold hover:text-[#FF9335] dark:hover:text-[#FF9335]">Blog</a>
+        </div>
+
+        <div class="flex items-center space-x-6">
+            
+            <div class="flex items-center space-x-2">
+                <span class="text-sm font-semibold text-gray-500 dark:text-gray-300 transition-colors duration-300"></span>
+                <button id="theme-toggle" class="relative inline-flex h-6 w-12 items-center rounded-full bg-gray-300 dark:bg-[#8A38F5] transition-colors duration-300 focus:outline-none cursor-pointer">
+                    <span class="inline-block h-4 w-4 transform rounded-full bg-white transition-transform duration-300 translate-x-1 dark:translate-x-7 shadow-sm"></span>
+                </button>
+            </div>
+
+          <div class="bg-[#FF9335] px-4 py-1 rounded-lg">
+              <button onclick="openModal()" class="text-white font-semibold hover:text-gray-100">
+                Sign Up
+              </button>
+          </div>
+        </div>
+    </nav>
+
+    <section class="flex flex-col md:flex-row items-center justify-between px-8 py-16 gap-10 max-w-7xl mx-auto">
+        <div class="flex flex-col space-y-6 max-w-xl">
+            <h1 class="text-5xl md:text-6xl font-bold leading-tight text-black dark:text-white transition-colors duration-300">
+                We Create <br>
+                <span class="text-[#8A38F5]">Solutions</span> For <br>
+                Your Business
+            </h1>
+            <p class="text-gray-700 dark:text-gray-300 leading-relaxed transition-colors duration-300">
+                We provide intelligent technology solutions to optimize efficiency 
+                and accelerate the growth of your business operations.
+            </p>
+      
+            <div class="pt-2">
+                <button onclick="openModal()"
+                class="inline-block bg-[#FF9335] text-white font-bold py-3 px-8 rounded-lg hover:bg-orange-500 transition-colors shadow-md">
+                Get Started!
+                 </button>
+</div>
+        </div>
+
+        <div class="w-full md:w-1/2 max-w-md">
+            <img src="1.png" class="w-full h-auto" alt="Hero Illustration">
+        </div>
+    </section>
+
+    <section class="py-16 px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4 text-black dark:text-white transition-colors duration-300">
+                We Provide The Best <span class="text-[#8A38F5]">Services</span>
+            </h2>
+            <p class="text-gray-500 dark:text-gray-400 max-w-3xl mx-auto text-sm md:text-base leading-relaxed transition-colors duration-300">
+                We deliver high-quality technology services specifically designed to enhance your 
+                business productivity and scalability in a sustainable way.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 flex flex-col h-full shadow-[0_0_25px_rgba(138,56,245,0.15)] border border-purple-50 dark:border-gray-700 transition-colors duration-300">
+                <div class="w-14 h-14 rounded-full bg-[#FFBC53] flex items-center justify-center mb-6">
+                    <img src="icon 1.png" alt="SEO Icon" class="w-8 h-8 object-contain">
+                </div>
+                <h3 class="text-lg font-bold text-black dark:text-white mb-3 transition-colors duration-300">Seo/Sem</h3>
+                <p class="text-[11px] text-gray-500 dark:text-gray-400 mb-8 leading-loose flex-grow font-medium transition-colors duration-300">
+                    Lorem ipsum dolor sit amet consectetur adipiscing elit. Dolor sit amet consectetur adipiscing elit quisque faucibus.
+                </p>
+                <div class="flex justify-center mt-auto">
+                    <a href="#" class="bg-[#8A38F5] text-white text-xs font-bold py-3 px-8 rounded-lg hover:bg-purple-700 transition-colors shadow-sm">Click Here</a>
+                </div>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 flex flex-col h-full shadow-[0_0_25px_rgba(138,56,245,0.15)] border border-purple-50 dark:border-gray-700 transition-colors duration-300">
+                <div class="w-14 h-14 rounded-full bg-[#FFBC53] flex items-center justify-center mb-6">
+                    <img src="icon 2.png" alt="Viral Campaign Icon" class="w-8 h-8 object-contain">
+                </div>
+                <h3 class="text-lg font-bold text-black dark:text-white mb-3 transition-colors duration-300">Viral Campaign</h3>
+                <p class="text-[11px] text-gray-500 dark:text-gray-400 mb-8 leading-loose flex-grow font-medium transition-colors duration-300">
+                    Lorem ipsum dolor sit amet consectetur adipiscing elit. Dolor sit amet consectetur adipiscing elit quisque faucibus.
+                </p>
+                <div class="flex justify-center mt-auto">
+                    <a href="#" class="bg-[#8A38F5] text-white text-xs font-bold py-3 px-8 rounded-lg hover:bg-purple-700 transition-colors shadow-sm">Click Here</a>
+                </div>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 flex flex-col h-full shadow-[0_0_25px_rgba(138,56,245,0.15)] border border-purple-50 dark:border-gray-700 transition-colors duration-300">
+                <div class="w-14 h-14 rounded-full bg-[#FFBC53] flex items-center justify-center mb-6">
+                    <img src="icon 3.png" alt="Marketing Icon" class="w-8 h-8 object-contain">
+                </div>
+                <h3 class="text-lg font-bold text-black dark:text-white mb-3 transition-colors duration-300">Marketing</h3>
+                <p class="text-[11px] text-gray-500 dark:text-gray-400 mb-8 leading-loose flex-grow font-medium transition-colors duration-300">
+                    Lorem ipsum dolor sit amet consectetur adipiscing elit. Dolor sit amet consectetur adipiscing elit quisque faucibus.
+                </p>
+                <div class="flex justify-center mt-auto">
+                    <a href="#" class="bg-[#8A38F5] text-white text-xs font-bold py-3 px-8 rounded-lg hover:bg-purple-700 transition-colors shadow-sm">Click Here</a>
+                </div>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 flex flex-col h-full shadow-[0_0_25px_rgba(138,56,245,0.15)] border border-purple-50 dark:border-gray-700 transition-colors duration-300">
+                <div class="w-14 h-14 rounded-full bg-[#FFBC53] flex items-center justify-center mb-6">
+                    <img src="icon 2.png" alt="Others Icon" class="w-8 h-8 object-contain">
+                </div>
+                <h3 class="text-lg font-bold text-black dark:text-white mb-3 transition-colors duration-300">Others</h3>
+                <p class="text-[11px] text-gray-500 dark:text-gray-400 mb-8 leading-loose flex-grow font-medium transition-colors duration-300">
+                    Lorem ipsum dolor sit amet consectetur adipiscing elit. Dolor sit amet consectetur adipiscing elit quisque faucibus.
+                </p>
+                <div class="flex justify-center mt-auto">
+                    <a href="#" class="bg-[#8A38F5] text-white text-xs font-bold py-3 px-8 rounded-lg hover:bg-purple-700 transition-colors shadow-sm">Click Here</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-[#FFDE8A] dark:bg-[#FFDE8A] py-20 px-8 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
+            <div class="w-full md:w-1/2 flex justify-center">
+                <img src="2.png" alt="Simple Solutions 3D Illustration" class="w-full max-w-lg object-contain">
+            </div>
+            <div class="w-full md:w-1/2 flex flex-col space-y-6">
+                <h2 class="text-4xl md:text-5xl font-bold text-black dark:text-gray-900 tracking-tight transition-colors duration-300">
+                    Simple <span class="text-[#8A38F5]">Solutions!</span>
+                </h2>
+                <p class="text-black dark:text-gray-800 text-lg leading-relaxed max-w-lg font-medium transition-colors duration-300">
+                    We understand that no two are alike. That's why we take the time to truly 
+                    understand your unique goals, challenges, and vision.
+                </p>
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <a href="#" class="bg-[#FF9335] text-white font-semibold py-3 px-8 rounded-lg hover:bg-orange-500 transition-colors shadow-md">
+                        Get Started
+                    </a>
+                    <a href="#" class="border-2 border-[#8A38F5] text-[#8A38F5] dark:border-gray-900 dark:text-gray-900 font-semibold py-3 px-8 rounded-lg hover:bg-[#8A38F5] hover:text-white dark:hover:bg-gray-900 dark:hover:text-white transition-colors">
+                        Read More
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-8 max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+        <div class="w-full md:w-1/2 flex flex-col space-y-6">
+            <h2 class="text-4xl md:text-5xl font-bold text-black dark:text-white transition-colors duration-300">Our <span class="text-[#8A38F5]">Agency</span></h2>
+            <p class="text-black dark:text-gray-300 font-semibold text-lg leading-relaxed transition-colors duration-300">
+                We believe in the power of data. Our analytics-driven approach allows us to make informed<br><br>
+                Let's turn your data into actionable insights adored Solutions for Your Business
+            </p>
+            <div>
+                <a href="#" class="inline-block bg-[#FF9335] text-white font-bold py-3 px-8 rounded-lg hover:bg-orange-500 transition-colors shadow-md">Read More</a>
+            </div>
+        </div>
+        <div class="w-full md:w-1/2 flex justify-center">
+            <img src="3.png" alt="Agency 3D Illustration" class="w-full max-w-lg object-contain">
+        </div>
+    </section>
+
+    <section class="py-20 px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4 text-black dark:text-white transition-colors duration-300">What <span class="text-[#FF9335]">Clients</span> Say!</h2>
+            <p class="text-gray-500 dark:text-gray-400 font-medium transition-colors duration-300">
+                See How Our Digital Marketing Agency Helped Clients<br>Achieve Their Goals
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-[0_0_25px_rgba(0,0,0,0.08)] flex flex-col h-full border border-gray-50 dark:border-gray-700 transition-colors duration-300">
+                <h4 class="text-[#FF9335] font-bold text-lg">Johnny Suh</h4>
+                <p class="text-gray-500 dark:text-gray-400 text-xs font-semibold mb-4 transition-colors duration-300">Executive CEO</p>
+                <p class="text-gray-500 dark:text-gray-400 text-xs leading-loose mb-6 flex-grow font-medium transition-colors duration-300">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus urna, vehicula sed purus ut
+                </p>
+                <div class="flex space-x-1">
+                    <img src="star 2.png" alt="Star" class="w-4 h-4">
+                    <img src="star 2.png" alt="Star" class="w-4 h-4">
+                    <img src="star 2.png" alt="Star" class="w-4 h-4">
+                    <img src="star 2.png" alt="Star" class="w-4 h-4">
+                    <img src="star 2.png" alt="Star" class="w-4 h-4">
+                </div>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-[0_0_25px_rgba(0,0,0,0.08)] flex flex-col h-full border border-gray-50 dark:border-gray-700 transition-colors duration-300">
+                <h4 class="text-[#FF9335] font-bold text-lg">Nashley Juan</h4>
+                <p class="text-gray-500 dark:text-gray-400 text-xs font-semibold mb-4 transition-colors duration-300">Executive CEO</p>
+                <p class="text-gray-500 dark:text-gray-400 text-xs leading-loose mb-6 flex-grow font-medium transition-colors duration-300">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus urna, vehicula sed purus ut
+                </p>
+                <div class="flex space-x-1">
+                    <img src="star 2.png" alt="Star" class="w-4 h-4">
+                    <img src="star 2.png" alt="Star" class="w-4 h-4">
+                    <img src="star 2.png" alt="Star" class="w-4 h-4">
+                    <img src="star 2.png" alt="Star" class="w-4 h-4">
+                    <img src="star 2.png" alt="Star" class="w-4 h-4">
+                </div>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-[0_0_25px_rgba(0,0,0,0.08)] flex flex-col h-full border border-gray-50 dark:border-gray-700 transition-colors duration-300">
+                <h4 class="text-[#FF9335] font-bold text-lg">Mark Z.</h4>
+                <p class="text-gray-500 dark:text-gray-400 text-xs font-semibold mb-4 transition-colors duration-300">Executive CEO</p>
+                <p class="text-gray-500 dark:text-gray-400 text-xs leading-loose mb-6 flex-grow font-medium transition-colors duration-300">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus urna, vehicula sed purus ut
+                </p>
+                <div class="flex space-x-1">
+                    <img src="star 2.png" alt="Star" class="w-4 h-4">
+                    <img src="star 2.png" alt="Star" class="w-4 h-4">
+                    <img src="star 2.png" alt="Star" class="w-4 h-4">
+                    <img src="star 2.png" alt="Star" class="w-4 h-4">
+                    <img src="star 2.png" alt="Star" class="w-4 h-4">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="relative mt-24">
+        <div class="absolute w-full left-0 right-0 flex justify-center -top-12 z-10 px-8">
+            <div class="w-full max-w-5xl bg-[#FF9335] rounded-xl p-8 md:px-12 flex flex-col md:flex-row items-center justify-between shadow-md">
+                <h3 class="text-white text-2xl font-bold mb-6 md:mb-0">Ready To Get Started?</h3>
+                <a href="#" class="border-2 border-white text-white font-bold py-2 px-8 rounded-lg hover:bg-white hover:text-[#FF9335] transition-colors">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+
+        <footer class="bg-[#FFDE8A] dark:bg-[#d4b05a] pt-28 pb-20 px-8 relative z-0 transition-colors duration-300">
+            <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between gap-12 md:gap-8">
+                <div class="flex items-center space-x-3 md:w-1/4">
+                    <img src="Logo.png" alt="BzMe Logo" class="h-10 object-contain">
+                    <h2 class="text-[#8A38F5] font-bold text-3xl tracking-wide">BzMe</h2>
+                </div>
+                <div class="flex flex-wrap gap-12 md:gap-24">
+                    <div>
+                        <h5 class="font-bold text-black dark:text-gray-900 mb-4 text-sm transition-colors duration-300">Company</h5>
+                        <ul class="space-y-3 text-sm text-black dark:text-gray-800 font-medium transition-colors duration-300">
+                            <li><a href="#" class="hover:text-[#8A38F5]">About</a></li>
+                            <li><a href="#" class="hover:text-[#8A38F5]">Contact</a></li>
+                            <li><a href="#" class="hover:text-[#8A38F5]">Careers</a></li>
+                            <li><a href="#" class="hover:text-[#8A38F5]">Team</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5 class="font-bold text-black dark:text-gray-900 mb-4 text-sm transition-colors duration-300">Designs</h5>
+                        <ul class="space-y-3 text-sm text-black dark:text-gray-800 font-medium transition-colors duration-300">
+                            <li><a href="#" class="hover:text-[#8A38F5]">Find a Designer</a></li>
+                            <li><a href="#" class="hover:text-[#8A38F5]">Discover Inspiration</a></li>
+                            <li><a href="#" class="hover:text-[#8A38F5]">Pricing</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5 class="font-bold text-black dark:text-gray-900 mb-4 text-sm transition-colors duration-300">Support</h5>
+                        <ul class="space-y-3 text-sm text-black dark:text-gray-800 font-medium transition-colors duration-300">
+                            <li><a href="#" class="hover:text-[#8A38F5]">Privacy Police</a></li>
+                            <li><a href="#" class="hover:text-[#8A38F5]">Terms</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+<script>
+const html = document.documentElement;
+const themeToggle = document.getElementById("theme-toggle");
+
+if (localStorage.getItem("theme") === "dark") {
+    html.classList.add("dark");
+}
+
+themeToggle.addEventListener("click", () => {
+    html.classList.toggle("dark");
+
+    if (html.classList.contains("dark")) {
+        localStorage.setItem("theme", "dark");
+    } else {
+        localStorage.setItem("theme", "light");
+    }
+});
+
+function openModal() {
+    document.getElementById("signupModal").classList.remove("hidden");
+    document.getElementById("signupModal").classList.add("flex");
+}
+
+function closeModal() {
+    document.getElementById("signupModal").classList.add("hidden");
+    document.getElementById("signupModal").classList.remove("flex");
+}
+
+function submitForm() {
+
+    let name = document.getElementById("name");
+    let email = document.getElementById("email");
+    let pass = document.getElementById("pass");
+
+    name.classList.remove("border-red-500");
+    email.classList.remove("border-red-500");
+    pass.classList.remove("border-red-500");
+
+    let valid = true;
+
+    if (name.value.trim() === "") {
+        name.value = "";
+        name.placeholder = "Nama wajib diisi";
+        name.classList.add("border-red-500");
+        valid = false;
+    } else if (name.value.trim().length < 3) {
+        name.value = "";
+        name.placeholder = "Minimal 3 karakter";
+        name.classList.add("border-red-500");
+        valid = false;
+    }
+
+    let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+    if (email.value.trim() === "") {
+        email.value = "";
+        email.placeholder = "Email wajib diisi";
+        email.classList.add("border-red-500");
+        valid = false;
+    } else if (!email.value.match(pattern)) {
+        email.value = "";
+        email.placeholder = "Email tidak valid";
+        email.classList.add("border-red-500");
+        valid = false;
+    }
+
+    if (pass.value.trim() === "") {
+        pass.value = "";
+        pass.placeholder = "Password wajib diisi";
+        pass.classList.add("border-red-500");
+        valid = false;
+    } else if (pass.value.length < 6) {
+        pass.value = "";
+        pass.placeholder = "Minimal 6 karakter";
+        pass.classList.add("border-red-500");
+        valid = false;
+    }
+
+    if (valid) {
+        alert("Pendaftaran berhasil!");
+
+        name.value = "";
+        email.value = "";
+        pass.value = "";
+
+        closeModal();
+    }
+}
+</script>
+
+</body>
+</html>
+
+
+
